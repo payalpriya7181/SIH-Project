@@ -1,0 +1,289 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+</head>
+<body>
+    <h1>
+        Registration
+    </h1>
+
+    <form action="/registerStu" method="POST">
+        <label for="">Full Name : </label>
+        <input type="text" name="fullName">
+        <label for="">Gender : </label>
+        <input type="radio" name="gender"><span>Male</span>
+        <input type="radio" name="gender"><span>Female</span>
+        <label for="">Username : </label> 
+        <input type="text" name="username">
+        <label for="">Password : </label>
+        <input type="password" name="password">
+        <label for="">Email : </label>
+        <input type="email" name="email">
+        <label for="">Mobile Number : </label>
+        <input type="number" name="mobileNo">
+        <label for="">Photo of Identity : </label>
+        <input type="file" name="phId">
+        <label for="">College Id : </label>
+        <input type="file" name="clgId">
+        <label for="">Address : </label>
+        <input type="text" name="address">
+        <label for="">City : </label>
+        <input type="text" name="city">
+        <label for="">Zip Code : </label>
+        <input type="number" name="zipcode">
+        <button type="submit" value="registerStu">Register</button>
+
+
+    </form>
+</body>
+</html> -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration form </title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+body{
+    display: flex;
+    height: 100vh;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #71b7e7,  #0088a9);
+}
+
+.container{
+    max-width: 700px;
+    width: 100%;
+    background: #fff;
+    padding: 25px 30px;
+    border-radius: 5px;
+
+}
+
+.title{
+    font-size: 25px;
+    font-weight: 700;
+    position: relative;
+    color: #112B3C;
+    font-family: 'Montserrat Alternates', sans-serif;
+}
+
+.title::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 30px;
+    background: linear-gradient(135deg, #71b7e7,  #0088a9);
+    
+}
+
+.user-details{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 20px 0 12px 0;
+}
+
+.input-box{
+    width: calc(100% / 2 - 20px);
+    margin-bottom: 15px;
+        
+}
+
+.details{
+    display: block;
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 5px;
+    color: #112B3C;
+    font-family: 'Montserrat Alternates', sans-serif;
+}
+
+.hi2{
+    padding: 9px;
+
+}
+input{
+    height: 45px;
+    /* font-weight: 100; */
+    width: 100%;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding-left: 15px;
+    font-size: 16px;
+    border-bottom-width: 2px;
+    font-family: 'Montserrat Alternates', sans-serif;
+    transition: all 0.3s ease;
+}
+
+
+
+input:focus, input:valid{
+    border-color: #0088a9;
+    /* #9b59b6 */
+
+}
+
+.register-btn{
+    background: linear-gradient(135deg, #71b7e7, #0088a9);
+    margin-top: 12px;
+
+}
+
+
+#new-task-form{
+    width: 100%;
+    display: flex;
+    flex-wrap: unwrap;
+}
+
+#new-task-submit{
+    margin: 12px;
+    width: 40%;
+}
+
+#new-task-input{
+    margin: 12px;
+    width: 97%;
+}
+.content{
+    width: 100%;
+    margin-top: 12px;
+}
+
+.task{
+    width: 100%;
+    /* margin: 12px; */
+    display: flex;
+    justify-content: space-between;
+}
+
+.actions{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 100px;
+}
+
+
+
+.text{
+    display: flex;
+    flex-wrap: unwrap;
+    width: 100%;
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 5px;
+    color: #112B3C;
+    font-family: 'Montserrat Alternates', sans-serif;
+    border-color: #0088a9;
+    
+}
+.edit{
+    padding-right: 15px;
+    padding-left: 15px;
+    margin: 12px;
+}
+
+button{
+    height: 30px;
+    width: 80px;
+}
+
+.delete{
+    padding-right: 15px;
+    padding-left: 15px;
+    margin: 12px;
+}
+
+button{
+    padding: 12;
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="title">Student Registration</div>
+        <form action="/registerStu" method="POST">
+            <div class="user-details">
+                <div class="input-box">
+                    <span class="details">Full Name</span>
+                    <input class="hi" type="text" name="fullName" placeholder="Enter your Fullname" >
+                </div>
+                <div class="input-box">
+                    <span class="details">Username</span>
+                    <input class="hi"  type="text" name="username" placeholder="Enter your Username" >
+                </div>
+                <div class="input-box">
+                    <span class="details">Email</span>
+                    <input class="hi" type="text" name="email" placeholder="Enter your Email" >
+                </div>
+                <div class="input-box">
+                    <span class="details">Password</span>
+                    <input class="hi" type="password" name="password" placeholder="Password" >
+                </div>
+                <div >
+                    <span style="display: inline-block;" >Gender</span><br>
+                    <span> Male </span> <span><input style="height: 10px;" value="Male" type="radio" name="gender"></span> 
+                    Female<input style="height: 10px;" value="Female" type="radio" name="gender">
+                </div>
+                <div class="input-box">
+                    <span class="details">Mobile No</span>
+                    <input class="hi" type="text" name="mobileNo" placeholder="Enter your Email" >
+                </div>
+
+                <!-- <div class="input-box">
+                    <span class="details">College</span>
+                    <input type="text"  placeholder="Enter your College" >
+                </div> -->
+                <div class="input-box">
+                    <span class="details">Address</span>
+                    <input class="hi" name="address" type="text" placeholder="Enter your Address" >
+                </div>
+                <div class="input-box">
+                    <span class="details">City</span>
+                    <input class="hi" name="city" type="text" placeholder="Enter your Address" >
+                </div>
+                <div class="input-box">
+                    <span class="details">Pin Code</span>
+                    <input class="hi" name="zipcode" type="text" placeholder="Enter your Address" >
+                </div>
+                <div class="input-box">
+                    <span class="details">Photo of Identity</span>
+                    <input class="hi2" name="phId" type="file" placeholder="Choose File" >
+                </div>
+                <div class="input-box">
+                    <span class="details">Photo of College Id</span>
+                    <input class="hi2" name="clgId" type="file" placeholder="Choose File" >
+                </div>
+
+                
+                <button type="submit" value="registerStu">Register</button>
+            </div>
+        </form>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://smtpjs.com/v3/smtp.js"></script> 
+    <style>
+       * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  color: #343a40;
+  /* line-height: 1;
+  display: flex;
+  justify-content: center; */
+}
+
+table {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  /* width: 800px; */
+  margin-top: 80px;
+  /* border: 1px solid #343a40; */
+  border-collapse: collapse;
+  font-size: 18px;
+}
+
+th,
+td {
+  /* border: 1px solid #343a40; */
+  padding: 16px 24px;
+  text-align: center;
+}
+
+thead th {
+  background-color: #087f5b;
+  color: #fff;
+  width: 25%;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f8f9fa;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #e9ecef;
+  border: #343a40;
+  border-radius: 50px;
+}
+button{
+    padding: 5px;
+}
+
+    </style>
+</head>
+<body>
+    
+    <h1 style="text-align: center;">Colleges Available</h1>
+
+
+    <table>
+        <tr>
+          <th>College Name</th>
+          <th>Address</th>
+          <th>Apparatus Available</th>
+          <th></th>
+        </tr>
+        <% records.forEach(function(row) { %>
+        <tr>
+          <td><%= row.clgName %></td>
+          <td><%= row.address %>- <%= row.zipcode %></td>
+          <td><%= row.apparatus %></td>
+          <td><button class="select" onclick="sendEmail()">Select</button></td>
+        </tr>
+        <% }) %>
+      </table>
+
+    <!-- <p name="clgName" >
+        <% records.forEach(function(row) { %>
+        <h3>
+            <%= row.clgName %> 
+        </h3>
+        <h2>
+            <%= row.address %>
+        </h2>
+        <% }) %>
+    </p> -->
+    
+<script type="text/javascript">
+    var select = document.querySelector('.select');
+    select.addEventListener('click', function() {
+        alert("Your response has been sent")
+    })
+
+    function sendEmail() {
+	Email.send({
+	Host: "smtp.gmail.com",
+	Username : "alokranjan11052003@gmail.com",
+	Password : "ytemkggihzzjzybd",
+	To : 'alokranjan11052003@gmail.com',
+	From : "kpande026@gmail.com",
+	Subject : "Request For Lab",
+	Body : 'Please Approve the lab to be performed in your college',
+	}).then(
+		message => alert("mail sent successfully")
+	);
+}
+</script>
+        
+
+
+       
+
+
+
+
+
+
+</body>
+</html>

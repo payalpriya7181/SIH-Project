@@ -1,0 +1,390 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/registerClg" method="POST">
+        <label for="">College Name : </label>
+        <input type="text" name="clgName"><br>
+        <label for="">College Email : </label>
+        <input type="email" name="clgEmail"><br>
+        <label for="">College Contact Number : </label> 
+        <input type="number" name="clgConNo"><br>
+        <label for="">College Id : </label>
+        <input type="text" name="clgIdClg"><br>
+        <label for="">Labs Available : </label>
+        <input type="text" name="labs"><br>
+        <label for="">Password : </label>
+        <input type="password" name="password"><br>
+        <label for="">Address : </label>
+        <input type="text" name="address"><br>
+        <label for="">City : </label>
+        <input type="text" name="city"><br>
+        <label for="">Zip Code : </label>
+        <input type="number" name="zipcode"><br>
+        <button type="submit" value="registerStu">Register</button>
+
+
+    </form>
+</body>
+</html> -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="./style-register.css" type="text">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+body{
+    display: flex;
+    height: 100vh;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #71b7e7,  #0088a9);
+}
+
+.container{
+    max-width: 700px;
+    width: 100%;
+    background: #fff;
+    padding: 25px 30px;
+    border-radius: 5px;
+
+}
+
+.title{
+    font-size: 25px;
+    font-weight: 700;
+    position: relative;
+    color: #112B3C;
+    font-family: 'Montserrat Alternates', sans-serif;
+}
+
+.title::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 30px;
+    background: linear-gradient(135deg, #71b7e7,  #0088a9);
+    
+}
+
+.user-details{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 20px 0 12px 0;
+}
+
+.input-box{
+    width: calc(100% / 2 - 20px);
+    margin-bottom: 15px;
+        
+}
+
+.details{
+    display: block;
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 5px;
+    color: #112B3C;
+    font-family: 'Montserrat Alternates', sans-serif;
+}
+
+.hi2{
+    padding: 9px;
+
+}
+input{
+    height: 45px;
+    /* font-weight: 100; */
+    width: 100%;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding-left: 15px;
+    font-size: 16px;
+    border-bottom-width: 2px;
+    font-family: 'Montserrat Alternates', sans-serif;
+    transition: all 0.3s ease;
+}
+
+
+
+input:focus, input:valid{
+    border-color: #0088a9;
+    /* #9b59b6 */
+
+}
+
+.register-btn{
+    background: linear-gradient(135deg, #71b7e7, #0088a9);
+    margin-top: 12px;
+
+}
+
+
+#new-task-form{
+    width: 100%;
+    display: flex;
+    flex-wrap: unwrap;
+}
+
+#new-task-submit{
+    margin: 12px;
+    width: 40%;
+}
+
+#new-task-input{
+    margin: 12px;
+    width: 97%;
+}
+.content{
+    width: 100%;
+    margin-top: 12px;
+}
+
+.task{
+    width: 100%;
+    /* margin: 12px; */
+    display: flex;
+    justify-content: space-between;
+}
+
+.actions{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 100px;
+}
+
+
+
+.text{
+    display: flex;
+    flex-wrap: unwrap;
+    width: 100%;
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 5px;
+    color: #112B3C;
+    font-family: 'Montserrat Alternates', sans-serif;
+    border-color: #0088a9;
+    
+}
+.edit{
+    padding-right: 15px;
+    padding-left: 15px;
+    margin: 12px;
+}
+
+.delete{
+    padding-right: 15px;
+    padding-left: 15px;
+    margin: 12px;
+}
+
+button{
+    padding: 12;
+}
+    </style>
+
+</head>
+<body>
+<div class="container">
+	<div class="title">College Registration</div>
+
+    <form action="/registerClg" method="POST">
+			<div class="user-details">
+                <div class="input-box">
+                    <span class="details">College Name</span>
+                    <input class="hi" name="clgName" type="text" placeholder="College Name" >
+                </div>
+                <div class="input-box">
+                    <span class="details">College Email</span>
+                    <input class="hi" name="clgEmail" type="text" placeholder="Email" >
+                </div>
+                <div class="input-box">
+                    <span class="details">Password</span>
+                    <input class="hi" name="password" type="text" placeholder="Password"  >
+                </div>
+                <div class="input-box">
+                    <span class="details">College Contact Number</span>
+                    <input class="hi" name="clgConNo" type="text" placeholder="Contact Number"  >
+                </div>
+                <div class="input-box">
+                    <span class="details">College I'd</span>
+                    <input class="hi" name="clgIdClg"  type="text" placeholder="College I'd" >
+                </div>
+                <div class="input-box">
+                    <span class="details">Address</span>
+                    <input class="hi" name="address" name="address" type="text" placeholder="Address" >
+                </div>
+                <div class="input-box">
+                    <span class="details">City</span>
+                    <input class="hi" name="city"  type="text" placeholder="City" >
+                </div>
+                <div class="input-box">
+                    <span class="details">Pin Code</span>
+                    <input class="hi" name="zipcode"  type="text" placeholder="Pincode"  >
+                </div>
+                <!-- <div id="dynamicCheck">
+                    <input type="button" value="Add Appartus" onclick="createNewElement();" />
+                  </div>
+                  
+                  <div id="newElementId" >New Appartus goes here:</div> -->
+
+                <div class="input-box">
+                    <span class="details">Apparatus Available</span>
+                    <span>(Separate each Apparatus by comma)</span>
+                    <input class="hi" name="apparatus"  type="text" placeholder="Apparatus"  >
+                </div>
+                
+                  
+                  
+                
+		</form>
+		    <!-- <form  id="new-task-form">
+			    <input class="labs-avail"
+                    type="text" 
+                    name="new-task-input" 
+                    id="new-task-input" 
+                    placeholder="Labs available"/> -->
+                <!-- <input 
+                    type="submit"
+                    id="new-task-submit" 
+                    value="Add College"/> -->
+					<!-- <input 
+                    type="submit"
+                    id="new-task-submit" 
+                    value="Add Lab"/>
+            </form> -->
+            
+        <!-- </form> -->
+	</header>
+	<main>
+		<section class="task-list">
+
+			<div id="tasks">
+
+				<!-- <div class="task">
+					<div class="content">
+						<input 
+							type="text" 
+							class="text" 
+							value="A new task"
+							readonly>
+					</div>
+					<div class="actions">
+						<button class="edit">Edit</button>
+						<button class="delete">Delete</button>
+					</div>
+				</div> -->
+
+			</div>
+		</section>
+	</main>
+    <button type="submit" value="registerStu">Register</button>
+    <!-- <input class="register-btn" type="submit" name="Register"> -->
+</div>
+
+<script type="text/JavaScript">
+    function createNewElement() {
+      // First create a DIV element.
+      var txtNewInputBox = document.createElement('div');
+  
+      // Then add the content (a new input box) of the element.
+      txtNewInputBox.innerHTML = "<input type='text' name='labs_i' id='newInputBox'>";
+  
+      // Finally put it where it is supposed to appear.
+      document.getElementById("newElementId").appendChild(txtNewInputBox);
+  }
+  </script>
+
+<!-- <script>
+    window.addEventListener('load', ()=> {
+    const form = document.querySelector('#new-task-form');
+    const input = document.querySelector('#new-task-input')
+    const list_el = document.querySelector('#tasks');
+
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+    const tasks_el = document.createElement('div');
+    task_el.classList.add('task');
+
+    const task_content_el = document.createElement('div');
+    task_content_el.classList.add('content');
+
+    task_el.appendChild(task_content_el);
+
+    const task_input_el =  document.createElement('input');
+    task_input_el.classList.add('text');
+    task_input_el.type = 'text';
+	task_input_el.value = task;
+	task_input_el.setAttribute('readonly', 'readonly')
+    })
+
+    task_content_el.appendChild(task_input_el);
+
+		const task_actions_el = document.createElement('div');
+		task_actions_el.classList.add('actions');
+		
+		const task_edit_el = document.createElement('button');
+		task_edit_el.classList.add('edit');
+		task_edit_el.innerText = 'Edit';
+
+		const task_delete_el = document.createElement('button');
+		task_delete_el.classList.add('delete');
+		task_delete_el.innerText = 'Delete';
+
+		task_actions_el.appendChild(task_edit_el);
+		task_actions_el.appendChild(task_delete_el);
+
+		task_el.appendChild(task_actions_el);
+
+		list_el.appendChild(task_el);
+
+		input.value = '';
+
+		task_edit_el.addEventListener('click', (e) => {
+			if (task_edit_el.innerText.toLowerCase() == "edit") {
+				task_edit_el.innerText = "Save";
+				task_input_el.removeAttribute("readonly");
+				task_input_el.focus();
+			} else {
+				task_edit_el.innerText = "Edit";
+				task_input_el.setAttribute("readonly", "readonly");
+			}
+		});
+
+		task_delete_el.addEventListener('click', (e) => {
+			list_el.removeChild(task_el);
+		});
+	});
+
+</script> -->
+
+</body>
+</html>
